@@ -47,36 +47,21 @@ time, and the LED/device is automatically controlled.
 1. RTC
 2. SCH
 3. EXIT
-##RTC Menu
+     ##RTC Menu
 1. TIME
 2. DATE
 3. DAY
 4. BACK
 
-##Project Flow
-Power ON
-   ↓
-Initialize Peripherals
-   ↓
-RTC + LCD + Keypad + LED + EINT0
-   ↓
-Display Current RTC
-   ↓
-Check Scheduled Time
-   ↓
-Control LED
-   ↓
-Configuration Switch Pressed?
-   ↓
-EINT0 Interrupt
-   ↓
-ISR Sets menu_request Flag
-   ↓
-Main Loop Detects Flag
-   ↓
-Main Menu
-   ↓
-RTC / Schedule / Exit
+## Project Flow
+
+When the system is powered ON, the LPC2148 initializes the RTC, LCD, 4×4 keypad, LED output, and EINT0 external interrupt. The RTC maintains the current date and time, which is continuously displayed on the LCD.
+
+During the main loop, the controller reads the current RTC time and checks it against the programmed ON and OFF schedule. Based on the schedule, the LED/device is automatically turned ON or OFF.
+
+When the configuration switch connected to EINT0 is pressed, an external interrupt is generated. The EINT0 interrupt service routine sets the `menu_request` flag and clears the interrupt. The main loop then detects this flag and opens the main menu.
+
+The main menu provides three options: RTC, Schedule, and Exit. The RTC option opens a submenu for configuring Time, Date, or Day. The Schedule option allows the user to configure the device ON and OFF times. The Exit option returns the system to normal RTC display and automatic schedule control.
 
 
 
