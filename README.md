@@ -63,6 +63,10 @@ When the configuration switch connected to EINT0 is pressed, an external interru
 
 The main menu provides three options: RTC, Schedule, and Exit. The RTC option opens a submenu for configuring Time, Date, or Day. The Schedule option allows the user to configure the device ON and OFF times. The Exit option returns the system to normal RTC display and automatic schedule control.
 
+## Circuit Diagram
+
+![LPC2148 Circuit Diagram](Proteus/LPC2148_Circuit.png)
+
 
 
 
