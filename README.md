@@ -62,6 +62,9 @@ During the main loop, the controller reads the current RTC time and checks it ag
 When the configuration switch connected to EINT0 is pressed, an external interrupt is generated. The EINT0 interrupt service routine sets the `menu_request` flag and clears the interrupt. The main loop then detects this flag and opens the main menu.
 
 The main menu provides three options: RTC, Schedule, and Exit. The RTC option opens a submenu for configuring Time, Date, or Day. The Schedule option allows the user to configure the device ON and OFF times. The Exit option returns the system to normal RTC display and automatic schedule control.
+## Circuit Diagram
+
+![LPC2148 Circuit Diagram](Proteus/LPC2148_RTC_Circuit.png)
 
 
 
