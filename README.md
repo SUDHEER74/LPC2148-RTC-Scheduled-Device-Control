@@ -69,10 +69,13 @@ The main menu provides three options: RTC, Schedule, and Exit. The RTC option op
 
 ## Hardware Setup
 
-![Hardware Setup](Hardware/Hardware_Setup.jpeg)
+<p align="center">
+  <img src="Hardware/Hardware_Setup.jpeg" width="500">
+</p>
 
-![LCD Output](Hardware/LCD.jpeg)
-
+<p align="center">
+  <img src="Hardware/LCD.jpeg" width="500">
+</p>
 
 
 
