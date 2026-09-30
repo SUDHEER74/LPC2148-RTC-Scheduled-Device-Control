@@ -141,6 +141,23 @@ u32 GetDaysInMonth(u32 month, u32 year)
 //display RTC
 void DisplayRTC(void)
 {
+    static u32 count = 0;
+    static u32 mode = 0;
+    static u32 first_time = 1;
+
+    //initial schedule
+    if(first_time == 1)
+    {
+        on_hour = 9;
+        on_min = 1;
+
+        off_hour = 9;
+        off_min = 2;
+
+        first_time = 0;
+    }
+
+
     //get time
     GetRTCTimeInfo(&hour,
                    &min,
@@ -183,22 +200,76 @@ void DisplayRTC(void)
                    &year);
 
 
-    //display date
-    WRITE_LCD_CMD(GOTO_LINE2_POS0);
+    //display second line
+    if(count == 0)
+    {
+        WRITE_LCD_CMD(GOTO_LINE2_POS0);
 
-    WRITE_LCD_DATA((date / 10) + '0');
-    WRITE_LCD_DATA((date % 10) + '0');
+        //clear second line
+        StrLCD("                ");
 
-    WRITE_LCD_DATA('/');
+        WRITE_LCD_CMD(GOTO_LINE2_POS0);
 
-    WRITE_LCD_DATA((month / 10) + '0');
-    WRITE_LCD_DATA((month % 10) + '0');
 
-    WRITE_LCD_DATA('/');
+        if(mode == 0)
+        {
+            //display date
+            WRITE_LCD_DATA((date / 10) + '0');
+            WRITE_LCD_DATA((date % 10) + '0');
 
-    U32LCD(year);
+            WRITE_LCD_DATA('/');
+
+            WRITE_LCD_DATA((month / 10) + '0');
+            WRITE_LCD_DATA((month % 10) + '0');
+
+            WRITE_LCD_DATA('/');
+
+            U32LCD(year);
+        }
+        else
+        {
+            //display on off time
+            StrLCD("ON:");
+
+            WRITE_LCD_DATA((on_hour / 10) + '0');
+            WRITE_LCD_DATA((on_hour % 10) + '0');
+
+					WRITE_LCD_DATA(':');
+
+            WRITE_LCD_DATA((on_min / 10) + '0');
+            WRITE_LCD_DATA((on_min % 10) + '0');
+
+            StrLCD("OF:");
+
+            WRITE_LCD_DATA((off_hour / 10) + '0');
+            WRITE_LCD_DATA((off_hour % 10) + '0');
+
+            WRITE_LCD_DATA(':');
+
+            WRITE_LCD_DATA((off_min / 10) + '0');
+            WRITE_LCD_DATA((off_min % 10) + '0');
+        }
+    }
+
+
+    //delay is 200ms
+    count++;
+
+    //2 seconds
+    if(count >= 10)
+    {
+        count = 0;
+
+        if(mode == 0)
+        {
+            mode = 1;
+        }
+        else
+        {
+            mode = 0;
+        }
+    }
 }
-
 
 //main menu
 u32 RTC_Menu(void)
@@ -554,7 +625,7 @@ int main()
 
 
     //initial date
-    SetRTCDateInfo(21,
+    SetRTCDateInfo(22,
                    9,
                    2026);
 
@@ -619,6 +690,8 @@ int main()
                 if(rtc_choice == '1')
                 {
                     SetTimeMenu();
+									WRITE_LCD_CMD(0x01);
+									delay_ms(2);
                 }
 
 
@@ -626,6 +699,8 @@ int main()
                 else if(rtc_choice == '2')
                 {
                     SetDateMenu();
+									WRITE_LCD_CMD(0x01);
+									delay_ms(2);
                 }
 
 
@@ -633,6 +708,8 @@ int main()
                 else if(rtc_choice == '3')
                 {
                     SetDayMenu();
+									  WRITE_LCD_CMD(0x01);
+									    delay_ms(2);
                 }
 
 
@@ -640,6 +717,7 @@ int main()
                 else if(rtc_choice == '4')
                 {
                     WRITE_LCD_CMD(0x01);
+									delay_ms(2);
 
                     continue;
                 }
@@ -650,6 +728,9 @@ int main()
             else if(choice == '2')
             {
                 SetScheduleMenu();
+							//clear screen 
+	             WRITE_LCD_CMD(0x01);
+	               delay_ms(2);
             }
 
 
