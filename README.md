@@ -90,7 +90,6 @@ The main menu provides three options: RTC, Schedule, and Exit. The RTC option op
 | `RTCLOCK.c` | RTC driver |
 | `schedule.c` | Schedule management |
 | `delay.c` | Delay functions |
-| `Startup.s` | ARM startup code |
 
 ## Author
 
