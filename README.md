@@ -67,6 +67,12 @@ The main menu provides three options: RTC, Schedule, and Exit. The RTC option op
 
 ![LPC2148 Block Diagram](Proteus/mini%20project.jpeg)
 
+## Hardware Setup
+
+![Hardware Setup](Hardware/Hardware_Setup.jpeg)
+
+![LCD Output](Hardware/LCD.jpeg)
+
 
 
 
