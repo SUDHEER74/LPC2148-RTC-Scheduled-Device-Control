@@ -1,6 +1,7 @@
 #include<lpc21xx.h>
 #include"KPM_defines.h"
 #include"types.h"
+#include"Lcd.h"
 u8 KPMLUT[4][4]={{'7','8','9','/'},{'4','5','6','*'},{'1','2','3','-'},{'C','0','=','+'}};
 void INIT_KPM(void)
 {
@@ -54,19 +55,40 @@ return key;
 }
 u32 ReadNum(void)
 {
-u8 key;
-u32 sum=0;
-while(1)
-{
-key=KeyScan();
-if(key>='0' && key<='9')
-{
-sum=(sum*10)+(key-48);
-}
-else
-break;
-}
-return sum;
+    u8 key;
+    u32 sum=0;
+    u32 digits=0;
+
+    while(1)
+    {
+        key=KeyScan();
+
+        if(key>='0' && key<='9')
+        {
+            sum=(sum*10)+(key-48);
+            digits++;
+
+            WRITE_LCD_DATA(key);
+        }
+        else if(key=='*')
+        {
+            if(digits>0)
+            {
+                sum=sum/10;
+                digits--;
+
+                WRITE_LCD_CMD(0x10);
+                WRITE_LCD_DATA(' ');
+                WRITE_LCD_CMD(0x10);
+            }
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    return sum;
 }
 
 
