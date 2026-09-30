@@ -10,20 +10,27 @@
 
 #define RTC_ENABLE (1 << 0)
 #define RTC_RESET  (1 << 1)
+#define RTC_CLKSRC (1<<4) 
+#define CPU_LPC2148
 
 
 /* RTC Initialization */
 void RTC_Init(void)
 {
-    /* Disable and reset RTC */
-    CCR = RTC_RESET;
+  // Disable and reset the RTC
+	CCR = RTC_RESET;
+  #ifndef CPU_LPC2148
+  // Set prescaler integer and fractional parts
+	PREINT = PREINT_VAL;
+	PREFRAC = PREFRAC_VAL;
+  
+  // Enable the RTC
+	CCR = RTC_ENABLE;  //LPC_2129
+	#else
+	// Enable the RTC with external clock source
+	CCR = RTC_ENABLE | RTC_CLKSRC;  //LPC_2148
+	#endif
 
-    /* Configure RTC prescaler */
-    PREINT  = PREINT_VAL;
-    PREFRAC = PREFRAC_VAL;
-
-    /* Enable RTC */
-    CCR = RTC_ENABLE;
 }
 
 
