@@ -1138,12 +1138,6 @@ Each module is responsible for a specific functionality.
 
 ---
 
-# 🔗 GitHub Repository
-
-https://github.com/SUDHEER74/LPC2148-RTC-Scheduled-Device-Control
-
----
-
 # 📌 Project Summary
 
 The **LPC2148 Menu-Driven RTC Configuration and Scheduled Device Control System** demonstrates practical Embedded Systems development using ARM7 and Embedded C.
@@ -1190,6 +1184,7 @@ It also includes time validation, date validation, leap-year validation, and sam
 
 ---
 
-# 📄 License
+# 👨‍💻 Author
 
-This project is developed for educational and Embedded Systems learning purposes.
+## Sudheer Nandipati
+
