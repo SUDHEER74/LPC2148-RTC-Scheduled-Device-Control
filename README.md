@@ -604,23 +604,8 @@ The project demonstrates:
 
 ---
 
-## 📸 Project Images
 
-### 🔌 Hardware Setup
 
-![Hardware Setup](Hardware/Hardware_Setup.jpeg)
-
-### 📺 LCD Interface
-
-![LCD Interface](Hardware/LCD.jpeg)
-
-### 🧪 Proteus Circuit
-
-![Proteus Circuit](Proteus/LPC2148_Circuit.png)
-
-### 🏗️ Project Block Diagram
-
-![Project Block Diagram](Proteus/mini%20project.jpeg)
 
 ---
 
@@ -685,5 +670,3 @@ The project combines **RTC, LCD, keypad, GPIO, EINT0, Embedded C and scheduled d
 ## 👨‍💻 Author
 
 **Sudheer Nandipati**
-
-🔧 Embedded Systems | 💻 Embedded C | ⚙️ ARM7 | 🔌 Firmware
