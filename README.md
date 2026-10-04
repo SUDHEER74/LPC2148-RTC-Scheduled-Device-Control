@@ -130,7 +130,7 @@ Normal Operation
 
 The following workflow shows the complete operation of the LPC2148 RTC Scheduled Device Control System.
 
-![LPC2148 Workflow Diagram](Proteus/flowdiagram.jpeg)
+![LPC2148 Workflow Diagram](Proteus/Flowdiagram.jpeg)
 
 ## 🔌 Hardware Connections
 
