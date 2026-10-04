@@ -126,6 +126,11 @@ Normal Operation
 ![LPC2148 Block Diagram](Proteus/BlockDiagram.jpeg)
 
 ---
+## 🔄 Workflow Diagram
+
+The following workflow shows the complete operation of the LPC2148 RTC Scheduled Device Control System.
+
+![LPC2148 Workflow Diagram](Proteus/flowdiagram.jpeg)
 
 ## 🔌 Hardware Connections
 
