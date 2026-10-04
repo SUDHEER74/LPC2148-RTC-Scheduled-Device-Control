@@ -151,9 +151,7 @@ Normal Operation
 
 ![ON OFF Configuration](Proteus/On_Off.png)
 
-### 🧪 Proteus Circuit
 
-![LPC2148 Proteus Circuit](Proteus/LPC2148_Circuit.png)
 
 ## 🔌 Hardware Connections
 
