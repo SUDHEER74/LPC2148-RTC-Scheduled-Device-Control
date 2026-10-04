@@ -123,7 +123,7 @@ Normal Operation
 
 ## 🖼️ Block Diagram
 
-![LPC2148 Block Diagram](Proteus/mini%20project.jpeg)
+![LPC2148 Block Diagram](Proteus/BlockDiagram.jpeg)
 
 ---
 
