@@ -213,7 +213,7 @@ When the switch is pressed, an external interrupt is generated. The interrupt se
 ## 📺 LCD Setup
 
 <p align="center">
-  <img src="Hardware/LCD.jpeg" width="600">
+  <img src="Proteus/LPC2148_LCD.png" width="600">
 </p>
 
 ---
