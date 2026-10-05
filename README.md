@@ -125,7 +125,7 @@ Normal Operation
 
 ### 🏗️ Block Diagram
 
-![LPC2148 Block Diagram](Proteus/mini project.jpeg)
+![LPC2148 Mini Project](Proteus/mini%20project.jpeg)
 
 ### 🔄 Workflow Diagram
 
